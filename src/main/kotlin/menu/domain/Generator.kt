@@ -51,21 +51,13 @@ class Generator {
         }
     }
 
-    private fun makeMenus(category: String, coach: Coach): List<String> {
-        val menus: MutableList<String> = mutableListOf()
-
-        while (true) {
-            val menu = getMenu(category)
-            val randomMenuName = Randoms.shuffle(menu.menus)[0]
-            menus.add(randomMenuName)
-            return menus
-            //todo if (isAvailableMenu(coach, randomMenuName)) return randomMenuName
-        }
-    }
-
 //    private fun isAvailableCategory(coach: String, category: String): Boolean {
-//        val menu = getMenu(category)
-//        val categoryCount = coach.countContainsRecommends(menu.menus)
+//        val recommendationCategories = mutableListOf<String>()
+//        repeat(recommendations.size) {
+//            recommendationCategories.add(recommendations[it].category)
+//        }
+//
+//        if (recommendationCategories.count { category ==  }(category)) return
 //        return categoryCount <= 2
 //        // todo 상수화
 //    }
