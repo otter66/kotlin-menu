@@ -3,6 +3,7 @@ package menu
 import menu.controller.ServiceController
 import menu.domain.Generator
 import menu.domain.Validator
+import menu.model.MenuBoard
 import menu.view.InputView
 import menu.view.OutputView
 
