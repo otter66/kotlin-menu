@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-01-05T14:07:36.349Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="mtet1RrMIzScioWm8sTD" version="20.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-05T14:24:40.656Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="qBB3oOgICSBgGf7KLakR" version="20.6.2" type="github">
   <diagram id="FJFMF_cU8nMcQ_dSxDxe" name="페이지-1">
-    <mxGraphModel dx="-1461" dy="-150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="-1012" dy="58" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,55 +11,58 @@
           <mxGeometry x="2190" y="570" width="380" height="550" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-1" value="Coach" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="2220" y="620" width="320" height="190" as="geometry" />
+          <mxGeometry x="2210" y="620" width="340" height="216" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-2" value="- name: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-1" vertex="1">
-          <mxGeometry y="26" width="320" height="26" as="geometry" />
+          <mxGeometry y="26" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-6" value="- cantEatMenus: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-1" vertex="1">
-          <mxGeometry y="52" width="320" height="26" as="geometry" />
+          <mxGeometry y="52" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-7" value="- recommendedMenus: List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-1" vertex="1">
-          <mxGeometry y="78" width="320" height="26" as="geometry" />
+          <mxGeometry y="78" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="HQHib-eTLAuZ_EJEV0sq-1" vertex="1">
-          <mxGeometry y="104" width="320" height="8" as="geometry" />
+          <mxGeometry y="104" width="340" height="8" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-4" value="+ containsCantEatMenus(menu: String): Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-1" vertex="1">
-          <mxGeometry y="112" width="320" height="26" as="geometry" />
+          <mxGeometry y="112" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="513HBcPauUH8Qse7BMwf-3" value="+ setRecommendedMenus(recommendMenus: List&lt;String&gt;)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HQHib-eTLAuZ_EJEV0sq-1">
+          <mxGeometry y="138" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-8" value="+ getName(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-1" vertex="1">
-          <mxGeometry y="138" width="320" height="26" as="geometry" />
+          <mxGeometry y="164" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-9" value="+ getRecommendedMenus(): List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-1" vertex="1">
-          <mxGeometry y="164" width="320" height="26" as="geometry" />
+          <mxGeometry y="190" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-10" value="MenuBoard" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="2220" y="830" width="320" height="216" as="geometry" />
+          <mxGeometry x="2210" y="860" width="340" height="216" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-11" value="- allMenus: List&lt;List&lt;String&gt;&gt; = List&lt;List&lt;String&gt;&gt; (6)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-10" vertex="1">
-          <mxGeometry y="26" width="320" height="26" as="geometry" />
+          <mxGeometry y="26" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="HQHib-eTLAuZ_EJEV0sq-10" vertex="1">
-          <mxGeometry y="52" width="320" height="8" as="geometry" />
+          <mxGeometry y="52" width="340" height="8" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-15" value="+ getMenuCategory(menu: String): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-10" vertex="1">
-          <mxGeometry y="60" width="320" height="26" as="geometry" />
+          <mxGeometry y="60" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-16" value="+ getCategoryMenus(categoryName: String): List&lt;String&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-10" vertex="1">
-          <mxGeometry y="86" width="320" height="26" as="geometry" />
+          <mxGeometry y="86" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-20" value="+ countMaxCategoryNumber(findMenus: List&lt;String&gt;): Int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-10" vertex="1">
-          <mxGeometry y="112" width="320" height="26" as="geometry" />
+          <mxGeometry y="112" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="513HBcPauUH8Qse7BMwf-2" value="- countMatch(list1: List&lt;String&gt;, list2: List&lt;String&gt;): Int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HQHib-eTLAuZ_EJEV0sq-10">
-          <mxGeometry y="138" width="320" height="26" as="geometry" />
+          <mxGeometry y="138" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-31" value="- getMenuCategoryIndex(categoryName: String): Int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="HQHib-eTLAuZ_EJEV0sq-10" vertex="1">
-          <mxGeometry y="164" width="320" height="26" as="geometry" />
+          <mxGeometry y="164" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="513HBcPauUH8Qse7BMwf-1" value="- getMenuCategoryName(categoryIndex: Int): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HQHib-eTLAuZ_EJEV0sq-10">
-          <mxGeometry y="190" width="320" height="26" as="geometry" />
+          <mxGeometry y="190" width="340" height="26" as="geometry" />
         </mxCell>
         <mxCell id="HQHib-eTLAuZ_EJEV0sq-21" value="Generator" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="3090" y="620" width="470" height="78" as="geometry" />
