@@ -80,13 +80,4 @@ class Generator {
         }
     }
 
-    private fun getMenu(category: String): Menu {
-        Menu.values().forEach { menu ->
-            if (menu.name_ko == category) return menu
-        }
-
-        // todo 다른 방법 고안 필요
-        return Menu.JAPAN
-    }
-
 }
