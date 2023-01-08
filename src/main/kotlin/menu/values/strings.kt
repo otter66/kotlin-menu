@@ -2,7 +2,7 @@ package menu.values
 
 // notice
 const val NOTICE_SERVICE_START_MESSAGE = "점심 메뉴 추천을 시작합니다."
-const val NOTICE_SERVICE_END_MESSAGE = "메뉴 추천 결과입니다."
+const val NOTICE_SERVICE_RESULT_MESSAGE = "메뉴 추천 결과입니다."
 const val NOTICE_RECOMMEND_SUCCESS_MESSAGE = "추천을 완료했습니다."
 
 // require

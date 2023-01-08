@@ -9,29 +9,6 @@ import menu.values.Menu
 
 class Generator {
 
-//    private val recommendations: MutableList<Recommendation> = mutableListOf()
-//
-//    fun makeRecommendations(days: List<String>, coaches: List<Coach>): List<Recommendation> {
-//        repeat(days.size) { index ->
-//            recommendations.add(makeRecommendation(days[index], coaches))
-//        }
-//
-//        return recommendations
-//    }
-//
-//    // 요일별 추천 만들기
-//    private fun makeRecommendation(day: String, coaches: List<Coach>): Recommendation {
-//        val category = makeCategory(day, coaches)
-//        val coachMenus: MutableList<Pair<String,String>> = mutableListOf()
-//
-//        repeat(coaches.size) { index ->
-//            val menu: String = makeMenu(category, coaches[index])
-//            coachMenus.add(Pair(coaches[index].getName(), menu))
-//        }
-//
-//        return Recommendation(day, category, coachMenus)
-//    }
-
     fun recommendCategories(daysSize: Int, menuBoard: MenuBoard): List<String> {
         val categoryRecommendations: MutableList<String> = mutableListOf()
 
@@ -47,26 +24,24 @@ class Generator {
         return categoryRecommendations
     }
 
-    private fun makeMenu(category: String, coach: Coach): String {
-        var menus: MutableList<String> = mutableListOf()
-        Menu.values().forEach { it ->
-            if (it.name_ko == category) menus = it.menus.toMutableList()
-        }
+    fun recommendMenus(coach: Coach, menuBoard: MenuBoard, categories: List<String>): List<String> {
+        val menuRecommendations: MutableList<String> = mutableListOf()
+        var categoryIndex = 0
 
-        while (true) {
-            val randomMenu = Randoms.shuffle(menus)[0]
-            if (isAvailableMenu(coach, randomMenu)) return randomMenu
-            return randomMenu
+        while (categoryIndex < categories.size) {
+            val randomMenu = Randoms.shuffle(menuBoard.getCategoryMenus(categories[categoryIndex]))[0]
+
+            if (!menuRecommendations.contains(randomMenu) &&
+                !coach.containsCantEatMenu(randomMenu)
+            ) {
+                menuRecommendations.add(randomMenu)
+                categoryIndex++
+            }
         }
+        return menuRecommendations
     }
 
-    private fun isAvailableMenu(coach: Coach, menu: String): Boolean {
-        if (coach.containsCantEatMenu(menu)) return false
-        //if (coach.containsRecommend(menu)) return false
-
-        return true
-    }
-
+    // todo MenuBoard Class 이용해 해당 함수 사용 않도록 수정 필요
     private fun getCategoryName(categoryNumber: Int): String {
         return when (categoryNumber) {
             Menu.JAPAN.number -> Menu.JAPAN.name_ko
