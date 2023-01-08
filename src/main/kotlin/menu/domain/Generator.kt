@@ -41,7 +41,7 @@ class Generator {
         return menuRecommendations
     }
 
-    // todo MenuBoard Class 이용해 해당 함수 사용 않도록 수정 필요
+    // todo MenuBoard Class 이용해 Menu Class의 의존성 제거, 해당 함수 사용 않도록 수정 필요
     private fun getCategoryName(categoryNumber: Int): String {
         return when (categoryNumber) {
             Menu.JAPAN.number -> Menu.JAPAN.name_ko

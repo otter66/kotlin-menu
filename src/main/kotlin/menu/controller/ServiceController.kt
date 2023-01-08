@@ -19,6 +19,9 @@ class ServiceController(
     private val menuBoard = MenuBoard()
     private val days = listOf("월요일", "화요일", "수요일", "목요일", "금요일")
 
+    // todo 출력 양식 맞추기
+    // todo 테스트 오류 문제 해결
+
     fun run() {
         noticeStart()
         
