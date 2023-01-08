@@ -13,3 +13,4 @@ const val MAX_COACH_CANT_EAT_MENU_NUMBER = 2
 const val CATEGORY_INDEX_START = 1
 const val CATEGORY_INDEX_END = 5
 
+const val NUMBER_OF_DAYS = 5

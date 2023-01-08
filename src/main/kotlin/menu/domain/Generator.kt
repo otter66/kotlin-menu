@@ -2,40 +2,49 @@ package menu.domain
 
 import camp.nextstep.edu.missionutils.Randoms
 import menu.model.Coach
-import menu.model.Recommendation
+import menu.model.MenuBoard
+import menu.values.CATEGORY_INDEX_END
+import menu.values.CATEGORY_INDEX_START
 import menu.values.Menu
 
 class Generator {
 
-    private val recommendations: MutableList<Recommendation> = mutableListOf()
+//    private val recommendations: MutableList<Recommendation> = mutableListOf()
+//
+//    fun makeRecommendations(days: List<String>, coaches: List<Coach>): List<Recommendation> {
+//        repeat(days.size) { index ->
+//            recommendations.add(makeRecommendation(days[index], coaches))
+//        }
+//
+//        return recommendations
+//    }
+//
+//    // 요일별 추천 만들기
+//    private fun makeRecommendation(day: String, coaches: List<Coach>): Recommendation {
+//        val category = makeCategory(day, coaches)
+//        val coachMenus: MutableList<Pair<String,String>> = mutableListOf()
+//
+//        repeat(coaches.size) { index ->
+//            val menu: String = makeMenu(category, coaches[index])
+//            coachMenus.add(Pair(coaches[index].getName(), menu))
+//        }
+//
+//        return Recommendation(day, category, coachMenus)
+//    }
 
-    fun makeRecommendations(days: List<String>, coaches: List<Coach>): List<Recommendation> {
-        repeat(days.size) { index ->
-            recommendations.add(makeRecommendation(days[index], coaches))
+    fun recommendCategories(daysSize: Int, menuBoard: MenuBoard): List<String> {
+        val categoryRecommendations: MutableList<String> = mutableListOf()
+
+        while (categoryRecommendations.size < daysSize) {
+            val categoryRecommendation = getCategoryName(Randoms.pickNumberInRange(CATEGORY_INDEX_START, CATEGORY_INDEX_END))
+            val tmpCategoryRecommendations = categoryRecommendations + listOf(categoryRecommendation)
+
+            if (menuBoard.countMaxCategoryNumber(tmpCategoryRecommendations) < 2) {
+                categoryRecommendations.add(categoryRecommendation)
+            }
         }
 
-        return recommendations
-    }
-
-    // 요일별 추천 만들기
-    private fun makeRecommendation(day: String, coaches: List<Coach>): Recommendation {
-        val category = makeCategory(day, coaches)
-        val coachMenus: MutableList<Pair<String,String>> = mutableListOf()
-
-        repeat(coaches.size) { index ->
-            val menu: String = makeMenu(category, coaches[index])
-            coachMenus.add(Pair(coaches[index].getName(), menu))
-        }
-
-        return Recommendation(day, category, coachMenus)
-    }
-
-    private fun makeCategory(day: String, coaches: List<Coach>): String {
-        while (true) {
-            val category = getCategoryName(Randoms.pickNumberInRange(1, 5)) // todo 상수화
-            return category
-            //todo if (isAvailableCategory(day, category)) return category
-        }
+        return categoryRecommendations
     }
 
     private fun makeMenu(category: String, coach: Coach): String {
@@ -50,17 +59,6 @@ class Generator {
             return randomMenu
         }
     }
-
-//    private fun isAvailableCategory(coach: String, category: String): Boolean {
-//        val recommendationCategories = mutableListOf<String>()
-//        repeat(recommendations.size) {
-//            recommendationCategories.add(recommendations[it].category)
-//        }
-//
-//        if (recommendationCategories.count { category ==  }(category)) return
-//        return categoryCount <= 2
-//        // todo 상수화
-//    }
 
     private fun isAvailableMenu(coach: Coach, menu: String): Boolean {
         if (coach.containsCantEatMenu(menu)) return false
