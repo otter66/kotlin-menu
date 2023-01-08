@@ -19,7 +19,7 @@ class ServiceController(
     fun run() {
         noticeStart()
         
-        val coaches: List<Coach> = getCoaches()
+        val coaches: List<Coach> = createCoaches()
         val recommendations: List<Recommendation> = createRecommendations(coaches)
 
         printResultRecommendation(recommendations)
@@ -58,44 +58,57 @@ class ServiceController(
 
     private fun noticeStart() {
         outputView.printMessage(NOTICE_SERVICE_START_MESSAGE)
-        println()
+        outputView.printMessage("")
     }
 
     private fun noticeEnd() {
         outputView.printMessage(NOTICE_RECOMMEND_SUCCESS_MESSAGE)
     }
 
-    private fun getCoaches(): List<Coach> {
+    // 사용자로부터 코치의 기본 정보를 입력 받아 생성한다
+    private fun createCoaches(): List<Coach> {
         val coaches = mutableListOf<Coach>()
-        val coachNames = getValidatedInputCoaches()
+        val coachNames = getValidatedInputCoachNames()
 
         repeat (coachNames.size) { index ->
             val coachName = coachNames[index]
             val coachCantEatMenus = getValidatedCoachCantEatMenus(coachName)
+
             coaches.add(Coach(coachName, coachCantEatMenus))
         }
 
         return coaches
     }
 
-    private fun getValidatedInputCoaches(): List<String> {
+    // 코치 이름들 입력을 검사해 반환
+    private fun getValidatedInputCoachNames(): List<String> {
         while (true) {
+            var coachNames: List<String>
+
             try {
                 outputView.printMessage(REQUIRE_COACHES_MESSAGE)
-                return inputView.readRecommendCoaches()
-                // todo 줄바꾸기
+                coachNames = inputView.readCoachNames()
+                outputView.printMessage("")
+
+                return coachNames
+
             } catch (e: IllegalArgumentException) {
                 outputView.printErrorMessage(e)
             }
         }
     }
 
+    // 코치가 못먹는 음식들 입력을 검사해 반환
     private fun getValidatedCoachCantEatMenus(coachName: String): List<String> {
         while (true) {
+            var coachCantEatMenus: List<String>
+
             try {
                 outputView.printRequireCoachCantEatMenus(coachName)
-                return inputView.readCoachCantEatMenus()
-                // todo 줄바꾸기
+                coachCantEatMenus = inputView.readCoachCantEatMenus()
+
+                return coachCantEatMenus
+
             } catch (e: IllegalArgumentException) {
                 outputView.printErrorMessage(e)
             }

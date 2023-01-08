@@ -7,7 +7,7 @@ class InputView(
     private val validator: Validator
 ) {
 
-    fun readRecommendCoaches(): List<String> {
+    fun readCoachNames(): List<String> {
         val input = Console.readLine()
         validator.validateRecommendCoaches(input)
         return input.split(",").toList()
