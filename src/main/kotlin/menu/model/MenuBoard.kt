@@ -58,7 +58,7 @@ class MenuBoard {
         }
     }
 
-    private fun getMenuCategoryName(categoryIndex: Int): String {
+    fun getMenuCategoryName(categoryIndex: Int): String {
         return when (categoryIndex) {
             1 -> "일식"
             2 -> "한식"
