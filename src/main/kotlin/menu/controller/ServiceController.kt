@@ -53,6 +53,7 @@ class ServiceController(
     }
 
     private fun noticeEnd() {
+        outputView.printMessage("")
         outputView.printMessage(NOTICE_RECOMMEND_SUCCESS_MESSAGE)
     }
 
@@ -97,6 +98,7 @@ class ServiceController(
             try {
                 outputView.printRequireCoachCantEatMenus(coachName)
                 coachCantEatMenus = inputView.readCoachCantEatMenus()
+                outputView.printMessage("")
 
                 return coachCantEatMenus
 
@@ -105,5 +107,4 @@ class ServiceController(
             }
         }
     }
-
 }
